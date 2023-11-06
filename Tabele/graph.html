@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="numeChart"></canvas>
+
+<script>
+  // Get query parameters from URL
+  var urlParams = new URLSearchParams(window.location.search);
+  var numeData = JSON.parse(decodeURIComponent(urlParams.get('nume')));
+
+
+  // Create frequency graph for nume column
+  var numeCtx = document.getElementById('numeChart').getContext('2d');
+  var uniqueNumeData = [...new Set(numeData)]; // Remove duplicates from numeData
+  var numeFrequencies = uniqueNumeData.map(function(value) {
+    return numeData.filter(function(name) {
+      return name === value;
+    }).length;
+  });
+
+  new Chart(numeCtx, {
+    type: 'bar',
+    data: {
+      labels: uniqueNumeData,
+      datasets: [{
+        label: 'Frequency',
+        data: numeFrequencies,
+        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          stepSize: 1
+        }
+      }
+    }
+  });
+
+
+</script>
+</body>
+</html>

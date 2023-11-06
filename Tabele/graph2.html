@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="sportChart"></canvas>
+
+<script>
+    // Get query parameters from URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var sportData = JSON.parse(decodeURIComponent(urlParams.get('sport')));
+
+    // Create frequency graph for sport column
+    var sportCtx = document.getElementById('sportChart').getContext('2d');
+    var uniqueSportData = [...new Set(sportData)]; // Remove duplicates from sportData
+    var sportFrequencies = uniqueSportData.map(function(value) {
+        return sportData.filter(function(name) {
+            return name === value;
+        }).length;
+    });
+
+    new Chart(sportCtx, {
+        type: 'bar',
+        data: {
+            labels: uniqueSportData,
+            datasets: [{
+                label: 'Frequency',
+                data: sportFrequencies,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    stepSize: 1
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

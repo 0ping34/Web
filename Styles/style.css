@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body{
+    background-color: #ff6f5e;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center; /* Center the text */
+    font-size: 2.5em; /* Make the font size larger */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+#form{
+    width: 25%;
+    margin: 120px auto;
+    padding: 50px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #ff6f5e, #ffcc00);
+}
+
+#btn,
+#reset {
+    color: white;
+    background-color: #323232;
+    padding: 15px 30px;  /* increase padding to make buttons larger */
+    font-size: larger;  /* increase font size */
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;  /* make buttons full width */
+    margin-top: 20px;  /* add space above the buttons */
+}
+
+#btn:hover {
+    background-color: lime;
+}
+#reset:hover {
+    background-color: red;
+}
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

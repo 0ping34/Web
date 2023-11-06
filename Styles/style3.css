@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Black background */
+    color: #ffffff;
+    margin: 0;
+}
+
+header {
+    background-color: #000000;
+    padding: 20px;
+    border-bottom: 1px solid #ffffff; /* Add a white border at the bottom */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    padding-right: 10px; /* Spacing between text and border */
+    border-right: 1px solid #ffffff; /* Add a white border at the right */
+}
+
+nav ul li:last-child {
+    border-right: none; /* Remove the border on the last element */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #cccccc;
+}
+
+.inputContainer,
+.filterContainer,
+.tableContainer,
+.importExportContainer,
+.graphContainer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+.inputContainer label,
+.filterContainer label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.inputContainer input[type="text"],
+.filterContainer input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.inputContainer input[type="submit"],
+.filterContainer input[type="button"],
+.importExportContainer input[type="button"],
+.graphContainer input[type="button"] {
+    padding: 10px 20px;
+    background-color: green;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.inputContainer input[type="submit"]:hover,
+.filterContainer input[type="button"]:hover,
+.importExportContainer input[type="button"]:hover,
+.graphContainer input[type="button"]:hover {
+    background-color: forestgreen;
+}
+
+.tableContainer {
+    overflow-y: auto; /* Add vertical scroll bar */
+    max-height: 300px; /* Set maximum height for the table container */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+}
+
+table, th, td {
+    border: 1px solid #555555;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #FF6347;
+    color: #ffffff;
+}
+
+.importExportContainer input[type="file"] {
+    display: none;
+}
+
+/* Add separate classes for the different buttons */
+.resetButton
+{
+    padding: 10px 20px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+.resetButton:hover
+{
+    background-color: firebrick;
+}
+
+.graphButton,
+.importButton,
+.exportButton {
+    padding: 10px 20px;
+    background-color: blue;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.graphButton:hover,
+.importButton:hover,
+.exportButton:hover {
+    background-color: dodgerblue;
+}
+
+/* Additional styling */
+
+/* Header styles */
+.header-line {
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Table panel styles */
+.table-panel {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+
+/* Graph container styles */
+.graphContainer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

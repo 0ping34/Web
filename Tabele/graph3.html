@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="mizaChart"></canvas>
+
+<script>
+  // Get query parameters from URL
+  var urlParams = new URLSearchParams(window.location.search);
+  var mizaData = JSON.parse(decodeURIComponent(urlParams.get('miza')));
+
+  // Create frequency graph for miza column
+  var mizaCtx = document.getElementById('mizaChart').getContext('2d');
+  var uniquemizaData = [...new Set(mizaData)]; // Remove duplicates from mizaData
+  var mizaFrequencies = uniquemizaData.map(function(value) {
+    return mizaData.filter(function(name) {
+      return name === value;
+    }).length;
+  });
+
+  new Chart(mizaCtx, {
+    type: 'bar',
+    data: {
+      labels: uniquemizaData,
+      datasets: [{
+        label: 'Frequency',
+        data: mizaFrequencies,
+        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          stepSize: 1
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
